@@ -1,4 +1,6 @@
 package jogo;
+import java.util.ArrayList;
+
 
 public class Jogador {
 	private String nome;
@@ -22,5 +24,9 @@ public class Jogador {
 	}
 	public void setParou(Boolean parou) {
 		this.parou = parou;
+	}
+	
+	public void somarMao(Integer valor) {
+		this.soma +=valor;
 	}
 }
