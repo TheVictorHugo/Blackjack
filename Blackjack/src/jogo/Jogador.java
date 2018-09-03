@@ -4,8 +4,46 @@ import java.util.ArrayList;
 
 public class Jogador {
 	private String nome;
-	private Integer soma;
+	private Integer soma = 0;
 	private Boolean parou;
+	private ArrayList<Carta> cartas = new ArrayList<>();
+	
+	
+	public ArrayList<Carta> getCartas() {
+		return cartas;
+	}
+
+	public void setCartas(ArrayList<Carta> cartas) {
+		this.cartas = cartas;
+	}
+
+	public void adicionarCarta(Carta c) {
+		boolean trocou = false;
+		if(Integer.parseInt(c.getValor()) == 1) {
+			//System.out.println("Temos um As !");
+			for(int i = 0; i < cartas.size();i++) {
+				if(Integer.parseInt(cartas.get(i).valor) >= 10) {
+					trocou = true;
+					//cartas.get(i).setValor("10");
+					c.setValor("10");
+					System.out.println("Agora o valor do As agora é 10");
+				}
+			}
+			if(trocou == false) {
+				System.out.println("O valor dele é 1");
+			}
+		}else if(Integer.parseInt(c.getValor()) >= 10) {
+			for(int i =0 ;i < cartas.size();  i++) {
+				if(Integer.parseInt(cartas.get(i).valor) == 1) {
+					cartas.get(i).setValor("10");
+					System.out.println("Agora o valor do As agora é 10");
+				}
+			}
+		}
+		this.soma =this.soma + Integer.parseInt(c.getValor());
+		
+		cartas.add(c);
+	}
 	
 	public String getNome() {
 		return nome;
@@ -29,4 +67,5 @@ public class Jogador {
 	public void somarMao(Integer valor) {
 		this.soma +=valor;
 	}
+	
 }
