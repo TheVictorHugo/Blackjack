@@ -1,0 +1,8 @@
+
+Dois jogadores sem dealer;
+
+A cada rodada o jogador1 pega uma carta e o jogador 2 também pega um cara;
+
+Eles vão pegando cartas até perder,nesse sentido poderá acontece de os dois jogadores perder e também dos dois jogadores ganhar
+
+Fiz um loop para rodar uma inteiração até algúem perder;

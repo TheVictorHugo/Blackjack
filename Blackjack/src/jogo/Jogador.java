@@ -26,17 +26,17 @@ public class Jogador {
 					trocou = true;
 					//cartas.get(i).setValor("10");
 					c.setValor("10");
-					System.out.println("Agora o valor do As agora é 10");
+					//System.out.println("Agora o valor do As agora é 10");
 				}
 			}
 			if(trocou == false) {
-				System.out.println("O valor dele é 1");
+				//System.out.println("O valor dele é 1");
 			}
 		}else if(Integer.parseInt(c.getValor()) >= 10) {
 			for(int i =0 ;i < cartas.size();  i++) {
 				if(Integer.parseInt(cartas.get(i).valor) == 1) {
 					cartas.get(i).setValor("10");
-					System.out.println("Agora o valor do As agora é 10");
+					//System.out.println("Agora o valor do As agora é 10");
 				}
 			}
 		}
@@ -66,6 +66,13 @@ public class Jogador {
 	
 	public void somarMao(Integer valor) {
 		this.soma +=valor;
+	}
+	
+	public void imprimirMao() {
+		for(int i =0 ; i< cartas.size();i++) {
+			System.out.printf("%s %s\n",this.cartas.get(i).getValor(),this.cartas.get(i).getNaip());
+			//System.out.println(this.cartas.get(i).getNaip());
+		}
 	}
 	
 }

@@ -1,3 +1,13 @@
+/*
+* Meu link do github com o histórico dos commits
+*  https://github.com/TheVictorHugo/Blackjack
+*  
+* Dois jogadores sem dealer;
+* A cada rodada o jogador1 pega uma carta e o jogador 2 também pega um cara;
+* Eles vão pegando cartas até perder,
+* nesse sentido poderá acontece de os dois jogadores perder e também dos dois jogadores ganhar
+* Fiz um loop para rodar uma inteiração até algúem perder;
+**/
 package jogo;
 import java.util.Scanner;
 import java.awt.event.KeyAdapter;
@@ -63,8 +73,8 @@ public class Jogo {
 		boolean verifica = true;
 		while(verifica) {
 			jogador1.adicionarCarta(b.retornatop());
-			System.out.printf("O jogador %s recebeu a carta %s de %s \n",
-					jogador1.getNome(), b.retornatop().valor, b.retornatop().Naip );
+			//System.out.printf("O jogador %s recebeu a carta %s de %s \n",
+					//jogador1.getNome(), b.retornatop().valor, b.retornatop().Naip );
 			
 			if(jogador1.getSoma() > 21) {
 				verifica = false;
@@ -77,8 +87,8 @@ public class Jogo {
 			}
 			
 			jogador2.adicionarCarta(b.retornatop());
-			System.out.printf("O jogador %s recebeu a carta %s de %s \n",
-					jogador2.getNome(), b.retornatop().valor, b.retornatop().Naip );
+			//System.out.printf("O jogador %s recebeu a carta %s de %s \n",
+					//jogador2.getNome(), b.retornatop().valor, b.retornatop().Naip );
 			
 			if(jogador2.getSoma() > 21) {
 				verifica = false;
@@ -94,8 +104,19 @@ public class Jogo {
 		//jogador1.adicionarCarta(b.retornatop());
 		//jogador1.adicionarCarta(b.retornatop());
 		//jogador1.adicionarCarta(b.retornatop());
-
 		
+		System.out.println("\n");
+		System.out.println("=============================================");
+		System.out.printf("O %s recebeu as cartas:\n",jogador1.getNome() );
+		jogador1.imprimirMao();
+		System.out.println("=============================================");
+		System.out.printf("\n");
+		
+		System.out.println("=============================================");
+		System.out.printf("O %s recebeu as cartas:\n",jogador2.getNome() );
+		jogador2.imprimirMao();
+		System.out.println("=============================================");
+		System.out.println();
 		
 		for(int i = 0; i < jogador1.getCartas().size(); i++) {
 			System.out.printf("jogador: %s, e a soma é: %d \n", 
@@ -104,7 +125,7 @@ public class Jogo {
 					jogador1.getSoma());
 		}
 		
-		System.out.println("\n");
+		System.out.println();
 		
 		for(int i = 0; i < jogador1.getCartas().size(); i++) {
 			System.out.printf("jogador: %s, e a soma é: %d \n", 
